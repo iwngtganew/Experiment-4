@@ -1,0 +1,102 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <cstdlib>
+
+using namespace std;
+
+
+float add (float a, float b)
+{ float sum;
+  sum = a + b;
+  return sum;
+}
+
+float sub (float a, float b)
+{ float diff;
+  diff = a - b;
+  return diff;
+}
+
+float mul (float a, float b)
+{ float prd;
+  prd = a * b;
+  return prd;
+}
+
+float div (float a, float b)
+{ float quo;
+  quo = a / b;
+  return quo;
+}
+
+int mod (int a, int b)
+{ int rem;
+  rem = a % b;
+  return rem;
+}
+
+void menu()
+{  
+  cout << "MENU : \n" 
+  << "1. Add \n" 
+  << "2. Subtract \n" 
+  << "3. Multiply \n" 
+  << "4. Divide \n" 
+  << "5. Modulus \n" 
+  << "\n";
+}
+
+
+int main ()
+{ int o;
+  float n1, n2, r;
+  char cont;
+  
+  
+  menu();
+  
+  
+  do
+  {
+  cout << "Enter Your Choice : "; cin >> o; cout << "\n";
+  cout << "Enter Your Two Numbers : \n"; 
+  cin >> n1; cout << "\n"; 
+  cin >> n2; cout << "\n";
+
+ 
+  switch (o)
+  { 
+    case 1: cout << "Result : "; 
+                    r = add(n1,n2);
+                    cout << r;
+                    break;
+    case 2: cout << "Result : "; 
+                    r = sub(n1,n2);
+                    cout << r;
+                    break;
+    case 3: cout << "Result : "; 
+                    r = mul(n1,n2);
+                    cout << r;
+                    break;
+    case 4: cout << "Result : "; 
+                    r = div(n1,n2);
+                    cout << r;
+                    break;
+    case 5: cout << "Result : "; 
+                    r = mod(n1,n2);
+                    cout << r;
+                    break;
+    default: cout << "Error";                
+  }
+  cout << "\n" << "\n";
+  cout << "Continue ? \n";
+  cin  >> cont;
+  }
+  
+  
+  while (cont == 'y' || cont == 'Y');
+  
+  
+  return 0;	
+}
