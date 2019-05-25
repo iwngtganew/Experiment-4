@@ -1,0 +1,81 @@
+#include <iostream>
+#include <cstdlib>
+#include <algorithm>
+
+using namespace std;
+
+
+int select(int arr[], int b);
+int bubble(int arr[], int b);
+
+
+int main()
+{
+  int a, n, c, de[20];	
+  
+  cout << "Enter Array Size : "; cin >> n;
+  cout << "\n" << "Enter the " << n << " Elements : ";
+  
+  
+  for (a=0; a<n;  a++)
+  {cin >> de[a]; }
+  
+
+  cout << "\n" << "Your Data : ";
+  for (a=0; a<n; a++)
+  {cout << de[a] << ", "; }
+
+  
+  cout << "\n" << "\n" << "How Would You Like Your Data Sorted? \n" << "\n"; 
+  cout << "Type 1 for Selection Sort \n";
+  cout << "Type 2 for Bubble Sort \n";
+  cin >> c;
+  
+  switch (c)
+  { case 1: cout << "\n" << "After Using Selection Sorting... \n" << "Sorted Data: "; select(de, n); 
+                
+				 break;
+                 
+    case 2: cout << "After Using Bubble Sorting... \n" << "\n" << "Sorted Data: "; bubble(de, n);
+                
+				 break;         
+	default: cout << "Error";       
+  }
+  
+
+  return 0;	
+}
+
+
+int select (int arr[], int b)
+{ int i, j, z;
+  for (i = 0; i < b  ; i++)
+  { for (j = i + 1 ; j < b; j++)
+    { if (arr[i] > arr[j])
+      {
+	  z = arr[i];
+      arr[i] = arr[j];
+      arr[j] = z;
+      }
+	}
+  }
+  for (i=0; i < b; i++)
+  {cout << arr[i] << ", "; }
+}
+
+
+int bubble (int arr[], int b)
+{ int i, j, z;
+  for (i = 0; i < b  ; i++)
+  { for (j = 0 ; j < b - i - 1; j++)
+    { if (arr[j] > arr[j+1])
+      {
+	  z = arr[j];
+      arr[j] = arr[j+1];
+      arr[j+1] = z;
+      }
+	}
+  }
+  for (i=0; i < b; i++)
+  {cout << arr[i] << ", "; }
+}
